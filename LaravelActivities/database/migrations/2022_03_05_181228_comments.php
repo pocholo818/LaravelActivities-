@@ -14,12 +14,14 @@ class Comments extends Migration
     public function up()
     {
         //
-        $table->id('commentId');
-        $table->string('comment');
-        $table->string('userId');
-        $table->string('postId');
-        $table->rememberToken();
-        $table->timestamps();
+        Schema::create('comments', function (Blueprint $table){
+            $table->id('commentId');
+            $table->string('comment');
+            $table->string('userId');
+            $table->string('postId');
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
